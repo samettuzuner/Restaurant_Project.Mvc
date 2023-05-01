@@ -1,0 +1,32 @@
+﻿@using Restaurant_Project.Models.Entity
+@model List<Tbl_Onerilerimiz>
+    
+
+<div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+   
+    <div class="swiper-wrapper">
+        @foreach (var item in Model)
+        {
+            <div class="swiper-slide">
+
+
+                <div class="testimonial-item">
+                    <p>
+                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                        Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                    </p>
+                    <img src="@item.Resim_Adres" class="testimonial-img" alt="">
+                    <h3>@item.Baslik</h3>
+                    <h4>@item.Baslik</h4>
+                </div>
+              
+            </div>
+
+        }
+        </div>
+        <div class="swiper-pagination">
+
+        </div>
+  
+    </div>

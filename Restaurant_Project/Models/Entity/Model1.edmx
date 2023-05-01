@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Restaurant_DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_Giris">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" />
+          <Property Name="AltBilgi" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Tbl_Hakkimda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" />
+          <Property Name="Madde" Type="varchar" MaxLength="50" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="200" />
+          <Property Name="Resim_Link" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Tbl_Menu_Aciklama">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" />
+          <Property Name="Aciklama1" Type="varchar" MaxLength="200" />
+          <Property Name="Aciklama2" Type="varchar" MaxLength="200" />
+          <Property Name="Resim_Adres" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Tbl_Menu_Yemekler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="50" />
+          <Property Name="Fiyat" Type="decimal" Precision="3" Scale="2" />
+          <Property Name="ResimLink" Type="varchar" MaxLength="500" />
+          <Property Name="Filtre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_NedenSecmelisiniz">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" />
+          <Property Name="AltBaslik" Type="varchar" MaxLength="50" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Tbl_Onerilerimiz">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" />
+          <Property Name="Aciklama1" Type="varchar" MaxLength="200" />
+          <Property Name="Aciklama2" Type="varchar" MaxLength="200" />
+          <Property Name="Resim_Adres" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Tbl_Resimler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResimAdres" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Tbl_Rezervasyon">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" />
+          <Property Name="Tarih" Type="varchar" MaxLength="50" />
+          <Property Name="Saat" Type="varchar" MaxLength="50" />
+          <Property Name="Kisi_Sayisi" Type="tinyint" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Tbl_Yorumlar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="Meslek" Type="varchar" MaxLength="50" />
+          <Property Name="Yorum" Type="varchar" MaxLength="100" />
+          <Property Name="Resim_Adres" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="Restaurant_DbModelStoreContainer">
+          <EntitySet Name="Tbl_Giris" EntityType="Self.Tbl_Giris" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Hakkimda" EntityType="Self.Tbl_Hakkimda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Menu_Aciklama" EntityType="Self.Tbl_Menu_Aciklama" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Menu_Yemekler" EntityType="Self.Tbl_Menu_Yemekler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_NedenSecmelisiniz" EntityType="Self.Tbl_NedenSecmelisiniz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Onerilerimiz" EntityType="Self.Tbl_Onerilerimiz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Resimler" EntityType="Self.Tbl_Resimler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Rezervasyon" EntityType="Self.Tbl_Rezervasyon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Yorumlar" EntityType="Self.Tbl_Yorumlar" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Restaurant_DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Giris">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AltBilgi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Hakkimda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Madde" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Resim_Link" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Menu_Aciklama">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Resim_Adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Menu_Yemekler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fiyat" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="ResimLink" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Filtre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_NedenSecmelisiniz">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AltBaslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Resimler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResimAdres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Rezervasyon">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Saat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kisi_Sayisi" Type="Byte" />
+          <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Yorumlar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Meslek" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Yorum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Resim_Adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Restaurant_DbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Giris" EntityType="Self.Tbl_Giris" />
+          <EntitySet Name="Tbl_Hakkimda" EntityType="Self.Tbl_Hakkimda" />
+          <EntitySet Name="Tbl_Menu_Aciklama" EntityType="Self.Tbl_Menu_Aciklama" />
+          <EntitySet Name="Tbl_Menu_Yemekler" EntityType="Self.Tbl_Menu_Yemekler" />
+          <EntitySet Name="Tbl_NedenSecmelisiniz" EntityType="Self.Tbl_NedenSecmelisiniz" />
+          <EntitySet Name="Tbl_Resimler" EntityType="Self.Tbl_Resimler" />
+          <EntitySet Name="Tbl_Rezervasyon" EntityType="Self.Tbl_Rezervasyon" />
+          <EntitySet Name="Tbl_Yorumlar" EntityType="Self.Tbl_Yorumlar" />
+          <EntitySet Name="Tbl_Onerilerimiz" EntityType="Restaurant_DbModel.Tbl_Onerilerimiz" />
+        </EntityContainer>
+        <EntityType Name="Tbl_Onerilerimiz">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Resim_Adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Restaurant_DbModelStoreContainer" CdmEntityContainer="Restaurant_DbEntities">
+          <EntitySetMapping Name="Tbl_Giris">
+            <EntityTypeMapping TypeName="Restaurant_DbModel.Tbl_Giris">
+              <MappingFragment StoreEntitySet="Tbl_Giris">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="AltBilgi" ColumnName="AltBilgi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Hakkimda">
+            <EntityTypeMapping TypeName="Restaurant_DbModel.Tbl_Hakkimda">
+              <MappingFragment StoreEntitySet="Tbl_Hakkimda">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Madde" ColumnName="Madde" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Resim_Link" ColumnName="Resim_Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Menu_Aciklama">
+            <EntityTypeMapping TypeName="Restaurant_DbModel.Tbl_Menu_Aciklama">
+              <MappingFragment StoreEntitySet="Tbl_Menu_Aciklama">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Aciklama1" ColumnName="Aciklama1" />
+                <ScalarProperty Name="Aciklama2" ColumnName="Aciklama2" />
+                <ScalarProperty Name="Resim_Adres" ColumnName="Resim_Adres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Menu_Yemekler">
+            <EntityTypeMapping TypeName="Restaurant_DbModel.Tbl_Menu_Yemekler">
+              <MappingFragment StoreEntitySet="Tbl_Menu_Yemekler">
+                <ScalarProperty Name="Filtre" ColumnName="Filtre" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="ResimLink" ColumnName="ResimLink" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_NedenSecmelisiniz">
+            <EntityTypeMapping TypeName="Restaurant_DbModel.Tbl_NedenSecmelisiniz">
+              <MappingFragment StoreEntitySet="Tbl_NedenSecmelisiniz">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="AltBaslik" ColumnName="AltBaslik" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Resimler">
+            <EntityTypeMapping TypeName="Restaurant_DbModel.Tbl_Resimler">
+              <MappingFragment StoreEntitySet="Tbl_Resimler">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ResimAdres" ColumnName="ResimAdres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Rezervasyon">
+            <EntityTypeMapping TypeName="Restaurant_DbModel.Tbl_Rezervasyon">
+              <MappingFragment StoreEntitySet="Tbl_Rezervasyon">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Saat" ColumnName="Saat" />
+                <ScalarProperty Name="Kisi_Sayisi" ColumnName="Kisi_Sayisi" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Yorumlar">
+            <EntityTypeMapping TypeName="Restaurant_DbModel.Tbl_Yorumlar">
+              <MappingFragment StoreEntitySet="Tbl_Yorumlar">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Meslek" ColumnName="Meslek" />
+                <ScalarProperty Name="Yorum" ColumnName="Yorum" />
+                <ScalarProperty Name="Resim_Adres" ColumnName="Resim_Adres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Onerilerimiz">
+            <EntityTypeMapping TypeName="Restaurant_DbModel.Tbl_Onerilerimiz">
+              <MappingFragment StoreEntitySet="Tbl_Onerilerimiz">
+                <ScalarProperty Name="Resim_Adres" ColumnName="Resim_Adres" />
+                <ScalarProperty Name="Aciklama2" ColumnName="Aciklama2" />
+                <ScalarProperty Name="Aciklama1" ColumnName="Aciklama1" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

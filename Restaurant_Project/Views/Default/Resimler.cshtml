@@ -1,0 +1,12 @@
+﻿@using Restaurant_Project.Models.Entity
+@model List<Tbl_Resimler>
+@foreach (var item in Model)
+{
+    <div class="col-lg-3 col-md-8">
+        <div class="gallery-item">
+
+            <img src="@item.ResimAdres" alt="" class="img-fluid">
+
+        </div>
+    </div>
+}

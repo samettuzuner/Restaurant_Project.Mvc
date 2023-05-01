@@ -1,0 +1,70 @@
+﻿@using Restaurant_Project.Models.Entity
+@model List<Tbl_Rezervasyon>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Rezervasyon Listesi</h2>
+<hr />
+
+<div class="card-body table-full-width table-responsive">
+    <table class="table table-hover">
+        <thead>
+        <th style="width: 15%;">Tarih</th>
+        <th style="width: 30%;">Ad Soyad</th>
+        <th style="width: 20%;">Telefon</th>
+        <th style="width: 15%;">Kişi Sayısı</th>
+        <th style="width: 40%;">Rezervasyon Detayları</th>
+
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.Tarih</td>
+                    <td>@item.Ad</td>
+                    <td>@item.Telefon</td>
+                    <td>@item.Kisi_Sayisi</td>
+
+
+                    <td>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#@item.ID">Detay</button>
+                        <div class="modal fade" id="@item.ID" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4>Rezervasyon Bilgileri</h4>
+
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><strong>Adı Soyadı:</strong> @item.Ad</p>
+                                        <p><strong>Telefon:</strong> @item.Telefon</p>
+                                        <p><strong>Kişi Sayısı:</strong> @item.Kisi_Sayisi</p>
+                                        <p><strong>Açıklama:</strong> @item.Aciklama</p>
+                                        <p><strong>Tarih:</strong> @item.Tarih</p>
+                                        <p><strong>Saat:</strong> @item.Saat</p>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" data-dismiss="modal"a href="/iletisim/iletisimSil/@item.ID">Rezervasyonu Onayla</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Rezervasyonu İptal Et</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+    </div>
+</div>
+

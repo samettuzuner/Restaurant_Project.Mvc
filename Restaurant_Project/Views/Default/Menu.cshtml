@@ -1,0 +1,19 @@
+﻿@using Restaurant_Project.Models.Entity
+@model List<Tbl_Menu_Yemekler>
+<div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+    @foreach (var item in Model)
+    {
+
+ 
+    <div class="col-lg-6 menu-item filter-@item.Filtre">
+        <img src="@item.ResimLink" class="menu-img" alt="">
+        <div class="menu-content">
+            <a href="#menu section-bg">@item.Baslik</a><span>₺@item.Fiyat</span>
+        </div>
+        <div class="menu-ingredients">
+          @item.Aciklama
+        </div>
+    </div>   
+    }
+
+</div>
