@@ -1,26 +1,22 @@
 ﻿@model Restaurant_Project.Models.Entity.Tbl_Giris
+
 @{
     ViewBag.Title = "GirisDuzenle";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<link href="~/login-form-20/css/style.css" rel="stylesheet" />
-<br />
-<h2>Yeni Giriş Bilgileri Güncelleme Paneli</h2>
-<br />
 
+<h3> Giriş Güncelleme Sayfası</h3>
+<br />
 <form method="post">
+    @Html.Label("Deneyim ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", disabled = true })
     <br />
     @Html.Label("Başlık")
     @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
     <br />
-    @Html.Label("Alt Bilgi")
-    @Html.TextAreaFor(x => x.AltBilgi, new { @class = "form-control" })
+    @Html.Label("Gano")
+    @Html.TextBoxFor(x => x.AltBilgi, new { @class = "form-control" })
     <br />
-    <div class="text-center"><button type="submit" class="btn btn-success">Güncelle</button></div>
-  
+    <button class="btn btn-success">Güncelle</button>
 </form>
-
-
-
-

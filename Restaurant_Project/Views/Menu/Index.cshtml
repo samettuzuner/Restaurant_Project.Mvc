@@ -5,4 +5,14 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Menü</h2>
+<table class="table table-bordered">
+    <tr>#</tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.ID</td>
+        </tr>
+
+    }
+</table>
