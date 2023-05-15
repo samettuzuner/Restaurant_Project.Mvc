@@ -26,8 +26,8 @@ namespace Restaurant_Project.Controllers
             Tbl_Hakkimda t = repo.Find(x => x.ID == p.ID);
             t.Baslik = p.Baslik;
             t.Aciklama = p.Aciklama;
-            p.Resim_Link = p.Resim_Link;
-            p.Madde = p.Madde;
+            t.Resim_Link = p.Resim_Link;
+            t.Madde = p.Madde;
             repo.TUpdate(t);
             return RedirectToAction("Index");
         }

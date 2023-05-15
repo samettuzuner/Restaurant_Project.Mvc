@@ -15,7 +15,7 @@ namespace Restaurant_Project.Controllers
         public ActionResult Index()
         {
             var oneriler = repo.List();
-            return View();
+            return View(oneriler);
         }
     }
 }

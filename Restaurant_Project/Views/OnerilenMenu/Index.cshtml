@@ -1,4 +1,5 @@
-﻿
+﻿@using Restaurant_Project.Models.Entity
+@model List<Tbl_Onerilerimiz>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -6,41 +7,81 @@
 
 <h2>Önerilen Menüler</h2>
 
-<!DOCTYPE html>
-<html>
-<body>
-    <div class="container">
-        <a type="submit" class="text-success" data-toggle="modal" data-target="#myModal"><i class="fas fa-pen"></i></a>
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3>Mesaj</h3>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="textbox1">Fiyat:</label>
-                                <input type="text" class="form-control" id="textbox1" placeholder="₺">
+
+<div class="card-body table-full-width table-responsive">
+    <table class="table table-hover">
+        <thead>
+        <th style="width: 15%;">Resim</th>
+        <th style="width: 30%;">Ad</th>
+        <th style="width: 20%;">Telefon</th>
+        <th style="width: 15%;">Kişi Sayısı</th>
+        <th style="width: 40%;">Rezervasyon Detayları</th>
+
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.Aciklama1</td>
+                    <td>@item.Aciklama2</td>
+               
+
+                    <td>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#@item.ID">Detay</button>
+                        <div class="modal fade" id="@item.ID" role="dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4>Ürün Bilgisi Düzenleme Sayfası</h4>
+
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post">
+                                        <div class="row">
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Alt Başlık</label>
+                                                    <input type="text" class="form-control" name="@item.ID" value="@item.ID">
+
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Fiyat</label>
+                                                    <input type="text" class="form-control" name="@item.ID" value="@item.ID">
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Resim URL</label>
+                                                    <input type="text" class="form-control" name="@item.ID" value="@item.ID">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <button class="btn btn-success">Güncelle</button>
+                                    </form>
+                                </div>
+
                             </div>
-                            <div class="form-group">
-                                <label for="textbox2">Açıklama:</label>
-                                <input type="text" class="form-control" id="textbox2" placeholder="Açıklama Giriniz">
-                            </div>
-                            <div class="form-group">
-                                <label for="textbox2">Resim URL:</label>
-                                <input type="text" class="form-control" id="textbox2" placeholder="Resim URL Adresi">
-                            </div>
-                            <div class="modal-footer" id="myFooter">
-                                <button type="submit" class="btn btn-primary">Güncelle</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        </div>
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
     </div>
-</body>
-</html>
+</div>
+
+

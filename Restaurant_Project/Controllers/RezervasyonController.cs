@@ -1,4 +1,5 @@
-﻿using Restaurant_Project.Repositories;
+﻿using Restaurant_Project.Models.Entity;
+using Restaurant_Project.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,12 @@ namespace Restaurant_Project.Controllers
         {
             var rezervasyon = repo.List();
             return View(rezervasyon);
+        }
+        public ActionResult RezervasyonSil(int id) 
+        {
+            Tbl_Rezervasyon rezervasyonSil=repo.Find(x=>x.ID==id);
+            repo.TDelete(rezervasyonSil);
+            return RedirectToAction("Index");
         }
     }
 }

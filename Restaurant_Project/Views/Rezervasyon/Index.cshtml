@@ -14,7 +14,8 @@
         <th style="width: 30%;">Ad Soyad</th>
         <th style="width: 20%;">Telefon</th>
         <th style="width: 15%;">Kişi Sayısı</th>
-        <th style="width: 40%;">Rezervasyon Detayları</th>
+        <th style="width: 20%;">Rezervasyon Detayları</th>
+        <th style="width: 20%;"> Durum</th>
 
         </thead>
 
@@ -27,6 +28,8 @@
                     <td>@item.Ad</td>
                     <td>@item.Telefon</td>
                     <td>@item.Kisi_Sayisi</td>
+                  
+
 
 
                     <td>
@@ -49,8 +52,10 @@
 
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-success" data-dismiss="modal"a href="/iletisim/iletisimSil/@item.ID">Rezervasyonu Onayla</button>
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Rezervasyonu İptal Et</button>
+                                        <a href="/Rezervasyon/RezervasyonKabul/@item.ID" class="btn btn-success">Rezervasyonu Kabul Et</a>
+                                        <a href="/Rezervasyon/RezervasyonSil/@item.ID" class="btn btn-danger">Rezervasyonu İptal Et</a>
+
+
                                     </div>
 
 
@@ -64,7 +69,5 @@
             }
         </tbody>
     </table>
-</div>
-    </div>
 </div>
 

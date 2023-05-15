@@ -6,5 +6,32 @@
 }
 
 <h2>İşletme Fotoğrafları</h2>
+<hr />
 
-<br />
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/light-bootstrap-dashboard-master/assets/css/light-bootstrap-dashboard.css" rel="stylesheet" />
+</head>
+<body>
+    @foreach (var item in Model)
+    {
+        <div class="gallery">
+            <a>
+                <img src="@item.ResimAdres" alt="Cinque Terre" width="600" height="400">
+            </a>
+            <div class="desc"><a href="/Resimler/ResimSil/@item.ID" class="btn btn-danger">Sil</a></div>
+
+        </div>
+
+    }
+
+</body>
+
+</html>
+
+
+
+
+
+
