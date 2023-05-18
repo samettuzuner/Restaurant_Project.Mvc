@@ -52,5 +52,40 @@ namespace Restaurant_Project.Controllers
             repo.TUpdate(t);
             return RedirectToAction("Index");
         }
+      
+
+        public ActionResult IndexFilter(string filtre)
+        {
+            Restaurant_DbEntities1 db = new Restaurant_DbEntities1();
+            List<Tbl_Menu_Yemekler> menuItems;
+
+           
+            if (filtre == "tatli")
+            {
+                menuItems = db.Tbl_Menu_Yemekler.Where(x => x.Filtre == "tatli").ToList();
+            }
+            else if (filtre == "icecek")
+            {
+                menuItems = db.Tbl_Menu_Yemekler.Where(x => x.Filtre == "icecek").ToList();
+            }
+            else if (filtre == "anayemek")
+            {
+                menuItems = db.Tbl_Menu_Yemekler.Where(x => x.Filtre == "anayemek").ToList();
+            }
+            else if (filtre == "salata")
+            {
+                menuItems = db.Tbl_Menu_Yemekler.Where(x => x.Filtre == "salata").ToList();
+            }
+            else
+            {
+                menuItems = db.Tbl_Menu_Yemekler.ToList(); // Tüm kayıtları getir
+
+            }
+
+            return View("IndexFilter", menuItems);
+        }
+
+
     }
 }
+

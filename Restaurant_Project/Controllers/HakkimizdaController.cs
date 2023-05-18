@@ -13,23 +13,20 @@ namespace Restaurant_Project.Controllers
         // GET: Hakkimizda
         HakkimdaRepo repo = new HakkimdaRepo();
 
-
         [HttpGet]
-        public ActionResult HakkimizdaDuzenle(int id)
+        public ActionResult Hakkimizda(int id)
         {
             Tbl_Hakkimda t = repo.Find(x => x.ID == id);
             return View(t);
         }
         [HttpPost]
-        public ActionResult HakkimizdaDuzenle(Tbl_Hakkimda p)
+        public ActionResult Hakkimizda(Tbl_Hakkimda p)
         {
             Tbl_Hakkimda t = repo.Find(x => x.ID == p.ID);
             t.Baslik = p.Baslik;
             t.Aciklama = p.Aciklama;
-            t.Resim_Link = p.Resim_Link;
-            t.Madde = p.Madde;
             repo.TUpdate(t);
-            return RedirectToAction("Index");
+            return View(t);
         }
     }
 }

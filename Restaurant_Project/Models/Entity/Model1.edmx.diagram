@@ -4,16 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e1f356a4023d4946b87f5d56dfeba8ab" Name="Diagram1">
+      <Diagram DiagramId="4bbe012976b9415298d56c986babdad6" Name="Diagram1">
         <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Giris" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Hakkimda" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Menu_Aciklama" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Menu_Yemekler" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_NedenSecmelisiniz" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Resimler" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Rezervasyon" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Yorumlar" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Onerilerimiz" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Menu_Yemekler" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_NedenSecmelisiniz" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Onerilerimiz" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Resimler" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Rezervasyon" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

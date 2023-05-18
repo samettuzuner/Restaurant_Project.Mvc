@@ -13,10 +13,10 @@ namespace Restaurant_Project.Models.Entity
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Restaurant_DbEntities : DbContext
+    public partial class Restaurant_DbEntities1 : DbContext
     {
-        public Restaurant_DbEntities()
-            : base("name=Restaurant_DbEntities")
+        public Restaurant_DbEntities1()
+            : base("name=Restaurant_DbEntities1")
         {
         }
     
@@ -27,12 +27,10 @@ namespace Restaurant_Project.Models.Entity
     
         public virtual DbSet<Tbl_Giris> Tbl_Giris { get; set; }
         public virtual DbSet<Tbl_Hakkimda> Tbl_Hakkimda { get; set; }
-        public virtual DbSet<Tbl_Menu_Aciklama> Tbl_Menu_Aciklama { get; set; }
         public virtual DbSet<Tbl_Menu_Yemekler> Tbl_Menu_Yemekler { get; set; }
         public virtual DbSet<Tbl_NedenSecmelisiniz> Tbl_NedenSecmelisiniz { get; set; }
+        public virtual DbSet<Tbl_Onerilerimiz> Tbl_Onerilerimiz { get; set; }
         public virtual DbSet<Tbl_Resimler> Tbl_Resimler { get; set; }
         public virtual DbSet<Tbl_Rezervasyon> Tbl_Rezervasyon { get; set; }
-        public virtual DbSet<Tbl_Yorumlar> Tbl_Yorumlar { get; set; }
-        public virtual DbSet<Tbl_Onerilerimiz> Tbl_Onerilerimiz { get; set; }
     }
 }

@@ -1,19 +1,19 @@
-﻿@model Restaurant_Project.Models.Entity.Tbl_Giris
-
+﻿@model Restaurant_Project.Models.Entity.Tbl_Hakkimda
 @{
-    ViewBag.Title = "GirisDuzenle";
+    ViewBag.Title = "Hakkimizda";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 
-<h3> Giriş Güncelleme Sayfası</h3>
+
+<h3> Hakkımızda Güncelleme Sayfası</h3>
 <br />
 <form method="post">
     @Html.Label("Başlık")
     @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
     <br />
     @Html.Label("Alt Başlık")
-    @Html.TextBoxFor(x => x.AltBilgi, new { @class = "form-control" })
+    @Html.TextBoxFor(x =>x.Aciklama, new { @class = "form-control" })
     <br />
     <button class="btn btn-success">Güncelle</button>
 </form>

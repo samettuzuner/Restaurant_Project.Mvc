@@ -16,7 +16,6 @@ namespace Restaurant_Project.Models.Entity
     {
         public int ID { get; set; }
         public string Baslik { get; set; }
-        public string AltBaslik { get; set; }
         public string Aciklama { get; set; }
     }
 }

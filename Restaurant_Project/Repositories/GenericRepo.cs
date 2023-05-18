@@ -10,7 +10,7 @@ namespace Restaurant_Project.Repositories
 {
     public class GenericRepo<T> where T : class, new()
     {
-        Restaurant_DbEntities db = new Restaurant_DbEntities();
+        Restaurant_DbEntities1 db = new Restaurant_DbEntities1();
         public List<T> List()
         {
             return db.Set<T>().ToList();

@@ -1,9 +1,9 @@
-﻿@using Restaurant_Project.Models.Entity
-@model List<Tbl_Menu_Yemekler>
+﻿@model List<Restaurant_Project.Models.Entity.Tbl_Menu_Yemekler>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "IndexFilter";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
 
 <h3>Menü Listesi</h3>
 <br />
@@ -101,17 +101,5 @@
             </script>
 
         </div>
-    </div>
-</div>
-<script>
-    function filterMenu() {
-        var selectedValue = document.getElementById("filtre").value;
-
-        if (selectedValue === "tum") {
-            window.location.href = "/Menu/Index";
-        } else {
-            window.location.href = "/Menu/IndexFilter?filtre=" + selectedValue;
-        }
-    }
-
-</script>
+            </div>
+        </div>

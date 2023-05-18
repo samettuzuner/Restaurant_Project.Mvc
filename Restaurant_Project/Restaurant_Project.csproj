@@ -132,6 +132,7 @@
     <Compile Include="Controllers\GirisController.cs" />
     <Compile Include="Controllers\HakkimizdaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\OnerilenMenuController.cs" />
     <Compile Include="Controllers\ResimlerController.cs" />
@@ -160,9 +161,6 @@
     <Compile Include="Models\Entity\Tbl_Hakkimda.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entity\Tbl_Menu_Aciklama.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Entity\Tbl_Menu_Yemekler.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -176,9 +174,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\Tbl_Rezervasyon.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\Tbl_Yorumlar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -310,8 +305,8 @@
     <Content Include="login-form-20\main.html" />
     <Content Include="Models\Entity\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Entity\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -440,13 +435,6 @@
     <Content Include="Restaurantly\assets\vendor\boxicons\fonts\boxicons.woff2" />
     <Content Include="Restaurantly\forms\book-a-table.php" />
     <Content Include="Restaurantly\forms\contact.php" />
-    <EntityDeploy Include="Models\Entity\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Entity\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="login-form-20\.DS_Store" />
     <Content Include="login-form-20\css\.DS_Store" />
     <Content Include="login-form-20\css\bootstrap\.DS_Store" />
@@ -623,6 +611,13 @@
     <Content Include="light-bootstrap-dashboard-master\ISSUE_TEMPLATE.md" />
     <Content Include="light-bootstrap-dashboard-master\LICENSE" />
     <Content Include="light-bootstrap-dashboard-master\README.md" />
+    <EntityDeploy Include="Models\Entity\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entity\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -657,14 +652,17 @@
     <Content Include="Views\Default\Rezervasyon.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Giris\GirisDuzenle.cshtml" />
-    <Content Include="Views\Hakkimizda\HakkimizdaDuzenle.cshtml" />
     <Content Include="Views\Menu\Index.cshtml" />
     <Content Include="Views\Rezervasyon\Index.cshtml" />
     <Content Include="Views\OnerilenMenu\Index.cshtml" />
+    <Content Include="Views\Resimler\ResimlerEkle.cshtml" />
+    <Content Include="Views\Hakkimizda\Hakkimizda.cshtml" />
     <Content Include="Views\Resimler\Index.cshtml" />
+    <Content Include="Views\Menu\IndexFilter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

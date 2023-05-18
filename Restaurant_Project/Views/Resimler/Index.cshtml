@@ -4,9 +4,70 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<head>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".resimEkleBtn").click(function () {
+                    $("#resimEkleModal").modal("show");
+                });
+
+                $("#resimEkleForm").submit(function (e) {
+                    e.preventDefault(); // Formun varsayılan gönderimini engelle
+
+                    var form = $(this);
+                    var url = form.attr("action");
+                    var resimAdres = $("#resimAdres").val();
+
+                    $.post(url, { resimAdres: resimAdres }, function (data) {
+                        // Kaydetme işlemi tamamlandıktan sonra yapılacak işlemler
+                        // Örneğin, başarılı bir kaydetme mesajı gösterebilirsiniz
+                        alert("Kaydetme işlemi başarıyla gerçekleştirildi.");
+
+                        // Modalı kapat
+                        $("#resimEkleModal").modal("hide");
+                        location.reload();
+                    });
+                });
+            });
+        </script>
+
+    </head>
+
+</head>
 
 <h2>İşletme Fotoğrafları</h2>
 <hr />
+<div class="desc"><a href="#" class="btn btn-primary resimEkleBtn">Resim Ekle</a></div>
+<!-- Resim Ekle Modal -->
+<div id="resimEkleModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-header">
+                    <h4>Ürün Bilgisi Düzenleme Sayfası</h4>
+
+                </div>
+
+            </div>
+            <div class="modal-body">
+                <form id="resimEkleForm" method="POST" action="/Resimler/ResimEkle">
+                    <label>Resim URL Adresi</label>
+                    <input type="text" id="resimAdres" name="resimAdres" class="form-control" placeholder="Resim Adresi">
+                    <br />
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary" id="kaydetBtn">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 
 <!DOCTYPE html>
 <html>
@@ -29,7 +90,6 @@
 </body>
 
 </html>
-
 
 
 

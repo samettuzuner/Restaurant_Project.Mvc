@@ -10,7 +10,7 @@ namespace Restaurant_Project.Controllers
     public class DefaultController : Controller
     {
         // GET: Default
-        Restaurant_DbEntities db = new Restaurant_DbEntities();
+        Restaurant_DbEntities1 db = new Restaurant_DbEntities1();
         public ActionResult Index()
         {
             var degerler= db.Tbl_Giris.ToList();

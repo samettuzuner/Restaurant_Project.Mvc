@@ -12,6 +12,7 @@ namespace Restaurant_Project.Controllers
     {
         // GET: Giris
         GirisRepo repo = new GirisRepo();
+
         [HttpGet]
         public ActionResult GirisDuzenle(int id)
         {

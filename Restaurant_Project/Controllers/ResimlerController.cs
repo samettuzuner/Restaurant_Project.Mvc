@@ -10,18 +10,31 @@ namespace Restaurant_Project.Controllers
 {
     public class ResimlerController : Controller
     {
-        // GET: Resimler
-        ResimlerRepo repo=new ResimlerRepo();
+        // GET: Resim
+        ResimlerRepo repo = new ResimlerRepo();
         public ActionResult Index()
         {
-            var resim=repo.List();
-            return View(resim);
+            var deger = repo.List();
+            return View(deger);
+        }
+        [HttpGet]
+        public ActionResult ResimEkle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ResimEkle(Tbl_Resimler p)
+        {
+            repo.Tadd(p);
+            return RedirectToAction("Index");
         }
         public ActionResult ResimSil(int id)
         {
-            Tbl_Resimler resimsil = repo.Find(x => x.ID == id);
-            repo.TDelete(resimsil);
+            var resimSil = repo.Find(x => x.ID == id);
+            repo.TDelete(resimSil);
             return RedirectToAction("Index");
         }
+      
+
     }
 }
