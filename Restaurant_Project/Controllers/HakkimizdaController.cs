@@ -11,7 +11,8 @@ namespace Restaurant_Project.Controllers
     public class HakkimizdaController : Controller
     {
         // GET: Hakkimizda
-        HakkimdaRepo repo = new HakkimdaRepo();
+        GenericRepo<Tbl_Hakkimda> repo=new GenericRepo<Tbl_Hakkimda>();
+       
 
         [HttpGet]
         public ActionResult Hakkimizda(int id)
@@ -26,7 +27,7 @@ namespace Restaurant_Project.Controllers
             t.Baslik = p.Baslik;
             t.Aciklama = p.Aciklama;
             repo.TUpdate(t);
-            return View(t);
+            return RedirectToAction("Index","Default");
         }
     }
 }

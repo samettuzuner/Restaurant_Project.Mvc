@@ -1,0 +1,59 @@
+﻿@using Restaurant_Project.Models.Entity
+@model List<Tbl_NedenSecmelisiniz>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Neden Bizi Seçmelisiniz Ekranı</h2>
+<div style="float: right;">
+    <a href="/neden/nedenbizEkle/" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Resim Ekle</a>
+</div>
+<br />
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal içeriği -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" style="position: absolute; top: 5px; right: 5px;">&times;</button>
+                <h4 class="modal-title">Neden Biz Ekleme Sayfası</h4>
+            </div>
+            <form method="post" action="/NedenBiz/nedenBizEkle">
+                <div class="modal-body">
+                    <label>Başlık</label>
+                    <input type="text" name="ResimAdres" class="form-control" placeholder="Başlık Giriniz">
+                </div>
+                <div class="modal-body">
+                    <label>Açıklama</label>
+                    <textarea name="ResimAdres" class="form-control" placeholder="Açıklama Giriniz"></textarea>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br />
+@foreach (var item in Model)
+{
+    <div class="media" style="background-color: #f0f0f0; padding: 40px;">
+        <div class="media-body">
+            <h3 class="dropdown-item-title" style="color: #333;">
+                @item.Baslik
+
+            </h3>
+            <p class="text-sm" style="color: #555;">@item.Aciklama</p>
+            <a href="/NedenBiz/nedenBizDuzenle/@item.ID" class="btn btn-success">Düzenle</a>
+            <a href="/NedenBiz/nedenBizSil/@item.ID" class="btn btn-danger">Sil</a>
+        </div>
+
+    </div>
+    <br />
+
+
+}
+
+

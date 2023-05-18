@@ -128,12 +128,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\GirisController.cs" />
     <Compile Include="Controllers\HakkimizdaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\NedenBizController.cs" />
     <Compile Include="Controllers\OnerilenMenuController.cs" />
     <Compile Include="Controllers\ResimlerController.cs" />
     <Compile Include="Controllers\RezervasyonController.cs" />
@@ -659,9 +661,12 @@
     <Content Include="Views\Hakkimizda\Hakkimizda.cshtml" />
     <Content Include="Views\Resimler\Index.cshtml" />
     <Content Include="Views\Menu\IndexFilter.cshtml" />
+    <Content Include="Views\NedenBiz\nedenBiz.cshtml" />
+    <Content Include="Views\NedenBiz\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Admin\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>

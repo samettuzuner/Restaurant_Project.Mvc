@@ -9,11 +9,9 @@
 <h3> Hakkımızda Güncelleme Sayfası</h3>
 <br />
 <form method="post">
-    @Html.Label("Başlık")
-    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
-    <br />
-    @Html.Label("Alt Başlık")
-    @Html.TextBoxFor(x =>x.Aciklama, new { @class = "form-control" })
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control", style = "height:120px" })
+
     <br />
     <button class="btn btn-success">Güncelle</button>
 </form>
