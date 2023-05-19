@@ -32,5 +32,6 @@ namespace Restaurant_Project.Models.Entity
         public virtual DbSet<Tbl_Onerilerimiz> Tbl_Onerilerimiz { get; set; }
         public virtual DbSet<Tbl_Resimler> Tbl_Resimler { get; set; }
         public virtual DbSet<Tbl_Rezervasyon> Tbl_Rezervasyon { get; set; }
+        public virtual DbSet<Tbl_Admin> Tbl_Admin { get; set; }
     }
 }

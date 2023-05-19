@@ -1,6 +1,7 @@
 ﻿using Restaurant_Project.Models.Entity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
@@ -23,7 +24,7 @@ namespace Restaurant_Project.Repositories
         public void TDelete(T p)
         {
             db.Set<T>().Remove(p);
-            db.SaveChanges();   
+            db.SaveChanges();
         }
         public T TGet(int id)
         {
@@ -33,7 +34,8 @@ namespace Restaurant_Project.Repositories
         {
             db.SaveChanges();
         }
-        public T Find(Expression<Func<T,bool>> where)
+
+        public T Find(Expression<Func<T, bool>> where)
         {
             return db.Set<T>().FirstOrDefault(where);
         }

@@ -10,7 +10,7 @@
 <div class="card-body table-full-width table-responsive">
     <table class="table table-hover">
         <thead>
-        <th style="width: 15%;">Tarih</th>
+        <th style="width: 10%;"></th>
         <th style="width: 30%;">Ad Soyad</th>
         <th style="width: 20%;">Telefon</th>
         <th style="width: 15%;">Kişi Sayısı</th>
@@ -22,12 +22,13 @@
             @foreach (var item in Model)
             {
                 <tr>
-
-                    <td>@item.Tarih</td>
+                    <td>
+                       
+                        <img src="~/light-bootstrap-dashboard-master/assets/img/faces/face-0.jpg" alt="Avatar" style="border-radius: 50px; max-width: 50px; height: auto;">
+                    </td>
                     <td>@item.Ad</td>
                     <td>@item.Telefon</td>
                     <td>@item.Kisi_Sayisi</td>
-                  
 
 
 
@@ -51,7 +52,7 @@
 
                                     </div>
                                     <div class="modal-footer">
-                                     
+
                                         <a href="/Rezervasyon/RezervasyonSil/@item.ID" class="btn btn-danger">Rezervasyonu İptal Et</a>
 
 

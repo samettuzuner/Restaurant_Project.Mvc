@@ -12,6 +12,7 @@
         <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Onerilerimiz" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Resimler" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Rezervasyon" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_DbModel.Tbl_Admin" Width="1.5" PointX="0.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

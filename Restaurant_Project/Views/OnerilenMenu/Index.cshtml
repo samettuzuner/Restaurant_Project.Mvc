@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+
 <h2>Önerilen Menüler</h2>
 
 
@@ -13,10 +14,11 @@
     <table class="table table-hover">
         <thead>
         <th style="width: 15%;">Resim</th>
-        <th style="width: 30%;">Ad</th>
-        <th style="width: 20%;">Telefon</th>
-        <th style="width: 15%;">Kişi Sayısı</th>
-        <th style="width: 40%;">Rezervasyon Detayları</th>
+        <th style="width: 20%;">Ad</th>
+        <th style="width: 20%;">içerik</th>
+        <th style="width: 40%;">Açıklama</th>
+        <th style="width: 15%;">Güncelle</th>
+
 
         </thead>
 
@@ -24,64 +26,48 @@
             @foreach (var item in Model)
             {
                 <tr>
-
-                    <td>@item.Aciklama1</td>
-                    <td>@item.Aciklama2</td>
-               
-
                     <td>
-
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#@item.ID">Detay</button>
-                        <div class="modal fade" id="@item.ID" role="dialog">
+                        <img src="@item.Resim_Adres" alt="Avatar" style="border-radius: 10px; max-width: 150px; height: auto;">
+                    </td>
+                    <td>@item.Baslik</td>
+                    <td>@item.Aciklama2</td>
+                    <td>@item.Aciklama1</td>
+                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#@item.ID">Güncelle</button></td>
+                    
+                    <div class="modal fade" id="@item.ID" role="dialog">
+                        <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h4>Ürün Bilgisi Düzenleme Sayfası</h4>
-
                                 </div>
                                 <div class="modal-body">
-                                    <form method="post">
-                                        <div class="row">
+                                    <form method="post" action="/OnerilenMenu/OneriGuncelle/@item.ID">
+                                        <div class="modal-body">
+                                            <label>Başlık</label>
+                                            <input type="text" name="Baslik" class="form-control" value="@item.Baslik">
+                                            <label>Resim URL</label>
+                                            <input type="text" name="Resim_Adres" class="form-control" value="@item.Resim_Adres">
+                                            <label>İçerik</label>
+                                            <input type="text" name="Aciklama2" class="form-control" value="@item.Aciklama2">
 
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>Alt Başlık</label>
-                                                    <input type="text" class="form-control" name="@item.ID" value="@item.ID">
+                                            <label>Açıklama</label>
+                                            <textarea class="form-control" name="Aciklama1" rows="15" style="  height: 150px;">@item.Aciklama1</textarea>
 
-                                                </div>
-                                            </div>
-                                            <br />
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>Fiyat</label>
-                                                    <input type="text" class="form-control" name="@item.ID" value="@item.ID">
 
-                                                </div>
-                                            </div>
 
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>Resim URL</label>
-                                                    <input type="text" class="form-control" name="@item.ID" value="@item.ID">
-
-                                                </div>
-                                            </div>
                                         </div>
                                         <br />
-                                        <button class="btn btn-success">Güncelle</button>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-warning">Güncelle</button>
+                                        </div>
                                     </form>
                                 </div>
-
                             </div>
                         </div>
-
-                    </td>
-
+                    </div>
                 </tr>
             }
         </tbody>
     </table>
 </div>
-    </div>
-</div>
-
-
+  

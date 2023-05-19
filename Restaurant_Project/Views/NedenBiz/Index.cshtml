@@ -5,55 +5,56 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Neden Bizi Seçmelisiniz Ekranı</h2>
-<div style="float: right;">
-    <a href="/neden/nedenbizEkle/" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Resim Ekle</a>
-</div>
+
+<h2>Neden Biz ? Ekranı</h2>
 <br />
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
 
-        <!-- Modal içeriği -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" style="position: absolute; top: 5px; right: 5px;">&times;</button>
-                <h4 class="modal-title">Neden Biz Ekleme Sayfası</h4>
-            </div>
-            <form method="post" action="/NedenBiz/nedenBizEkle">
-                <div class="modal-body">
-                    <label>Başlık</label>
-                    <input type="text" name="ResimAdres" class="form-control" placeholder="Başlık Giriniz">
-                </div>
-                <div class="modal-body">
-                    <label>Açıklama</label>
-                    <textarea name="ResimAdres" class="form-control" placeholder="Açıklama Giriniz"></textarea>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
-                </div>
-            </form>
-        </div>
-    </div>
+<div class="card-body table-full-width table-responsive">
+    <table class="table table-hover">
+        <thead>
+        <th style="width: 20%;">Başlık</th>
+        <th style="width: 40%;">Açıklama</th>
+        <th style="width: 15%;">Güncelle</th>
+
+
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.Baslik</td>
+                    <td>@item.Aciklama</td>
+                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#@item.ID">Güncelle</button></td>
+
+                    <div class="modal fade" id="@item.ID" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4>Ürün Bilgisi Düzenleme Sayfası</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post" action="/NedenBiz/NedenGuncelle/@item.ID">
+                                        <div class="modal-body">
+                                            <label>Başlık</label>
+                                            <input type="text" name="Baslik" class="form-control" value="@item.Baslik">
+                                            <label>Açıklama</label>
+                                            <textarea class="form-control" name="Aciklama" rows="15" style="  height: 150px;">@item.Aciklama</textarea>
+
+                                        </div>
+                                        <br />
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-warning">Güncelle</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
-<br />
-@foreach (var item in Model)
-{
-    <div class="media" style="background-color: #f0f0f0; padding: 40px;">
-        <div class="media-body">
-            <h3 class="dropdown-item-title" style="color: #333;">
-                @item.Baslik
-
-            </h3>
-            <p class="text-sm" style="color: #555;">@item.Aciklama</p>
-            <a href="/NedenBiz/nedenBizDuzenle/@item.ID" class="btn btn-success">Düzenle</a>
-            <a href="/NedenBiz/nedenBizSil/@item.ID" class="btn btn-danger">Sil</a>
-        </div>
-
-    </div>
-    <br />
-
-
-}
-
-

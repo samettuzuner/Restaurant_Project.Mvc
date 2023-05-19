@@ -11,47 +11,26 @@ namespace Restaurant_Project.Controllers
     public class NedenBizController : Controller
     {
         // GET: NedenBiz
-        GenericRepo<Tbl_NedenSecmelisiniz> repo = new GenericRepo<Tbl_NedenSecmelisiniz>();
+
+        NedenBizRepo repo = new NedenBizRepo();
         public ActionResult Index()
         {
             var neden = repo.List();
             return View(neden);
         }
-
         [HttpGet]
-        public ActionResult nedenBiz(int id)
+        public ActionResult NedenGuncelle(int id)
         {
-            Tbl_NedenSecmelisiniz t = repo.Find(x => x.ID == id);
-            return View(t);
+            var nedenGuncelle = repo.Find(x => x.ID == id);
+            return View();
         }
         [HttpPost]
-        public ActionResult nedenBiz(Tbl_NedenSecmelisiniz p)
+        public ActionResult NedenGuncelle(Tbl_NedenSecmelisiniz p)
         {
-            Tbl_NedenSecmelisiniz t = repo.Find(x => x.ID == p.ID);
+            var t = repo.Find(x => x.ID == p.ID);
             t.Baslik = p.Baslik;
             t.Aciklama = p.Aciklama;
             repo.TUpdate(t);
-            return RedirectToAction("Index", "Default");
-        }
-        [HttpGet]
-        public ActionResult nedenBizDuzenle(int id)
-        {
-            Tbl_NedenSecmelisiniz t = repo.Find(x => x.ID == id);
-            return View(t);
-        }
-        [HttpPost]
-        public ActionResult nedenBizDuzenle(Tbl_NedenSecmelisiniz p)
-        {
-            Tbl_NedenSecmelisiniz t = repo.Find(x => x.ID == p.ID);
-            t.Baslik = p.Baslik;
-            t.Aciklama = p.Aciklama;
-            repo.TUpdate(t);
-            return RedirectToAction("Index");
-        }
-        public ActionResult nedenBizSil(int id)
-        {
-            Tbl_NedenSecmelisiniz t = repo.Find(x => x.ID == id);
-            repo.TDelete(t);
             return RedirectToAction("Index");
         }
     }
